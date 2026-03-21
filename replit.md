@@ -48,6 +48,18 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
+## Artifacts
+
+### `artifacts/secaps-black` (`@workspace/secaps-black`)
+
+High-conversion landing page for Secaps Black supplement product.
+
+- Landing page (`/`) — Full product info, benefits, how-to-use, ingredients, guarantee, ANVISA info, security alert, location info. Two CTA buttons: WhatsApp and Ver Produtos.
+- Products page (`/produtos`) — Marketplace-style kit grid (1–6 month kits) each with WhatsApp CTA.
+- Identity: dark green background, teal (#00ddb4) accent, bold uppercase typography.
+- WhatsApp number: hardcoded in `src/pages/LandingPage.tsx` and `src/pages/ProductsPage.tsx` (update `WHATSAPP_NUMBER`).
+- Images: stored in `public/` directory.
+
 ## Packages
 
 ### `artifacts/api-server` (`@workspace/api-server`)

@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --font-sans: var(--app-font-sans);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 160 30% 6%;
+  --foreground: 0 0% 98%;
+  --border: 160 20% 15%;
+  --input: 160 20% 15%;
+  --ring: 175 80% 45%;
+  --card: 160 25% 9%;
+  --card-foreground: 0 0% 95%;
+  --primary: 175 80% 45%;
+  --primary-foreground: 160 30% 6%;
+  --secondary: 160 20% 15%;
+  --secondary-foreground: 0 0% 90%;
+  --muted: 160 20% 12%;
+  --muted-foreground: 0 0% 60%;
+  --accent: 175 80% 45%;
+  --accent-foreground: 160 30% 6%;
+  --destructive: 0 84% 60%;
+  --app-font-sans: 'Inter', 'Segoe UI', sans-serif;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-color: #0a1a13;
+  }
+}
+
+.gradient-bg {
+  background: radial-gradient(ellipse at top, #0d2e1a 0%, #080f0c 60%, #050a07 100%);
+}
+
+.teal-glow {
+  text-shadow: 0 0 30px rgba(0, 220, 180, 0.6), 0 0 60px rgba(0, 220, 180, 0.3);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00ddb4, #00a896);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 221, 180, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 221, 180, 0.6);
+}
+
+.card-dark {
+  background: rgba(10, 30, 20, 0.8);
+  border: 1px solid rgba(0, 221, 180, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.benefit-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 221, 180, 0.15);
+  border: 1px solid rgba(0, 221, 180, 0.3);
+  font-size: 1.5rem;
+}
+
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(0,221,180,0.08) 0%, transparent 50%);
+}
+
+.star-gold {
+  color: #FFD700;
+}
+
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ddb4, transparent);
+}
+
+.alert-section {
+  background: #0a0a0a;
+  border: 2px solid #333;
+}
+
+.guarantee-badge {
+  background: radial-gradient(circle, #b8860b, #8b6914, #5c4409);
+  border: 3px solid #FFD700;
+}
+
+.ingredient-badge {
+  background: rgba(0, 221, 180, 0.1);
+  border: 1px solid rgba(0, 221, 180, 0.3);
+  color: #00ddb4;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.kit-card {
+  background: linear-gradient(135deg, rgba(10, 30, 20, 0.95), rgba(5, 15, 10, 0.95));
+  border: 1px solid rgba(0, 221, 180, 0.25);
+  transition: all 0.3s ease;
+}
+
+.kit-card:hover {
+  border-color: rgba(0, 221, 180, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 221, 180, 0.15);
+}
+
+.best-seller-badge {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #000;
+  font-weight: 800;
+}
+
+.price-tag {
+  color: #00ddb4;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #666;
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 8px 40px rgba(37, 211, 102, 0.8); }
+}
