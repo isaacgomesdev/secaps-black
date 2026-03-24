@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "558540420501";
 
 const makeWhatsAppUrl = (kitName: string) => {
   const msg = encodeURIComponent(`Olá! Quero comprar o ${kitName} do Secaps Black!`);
