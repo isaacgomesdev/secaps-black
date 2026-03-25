@@ -109,6 +109,38 @@ function BuyerNotification() {
   );
 }
 
+function TopCountdownBanner() {
+  const { h, m, s } = useCountdown(2 * 3600 + 37 * 60 + 14);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return (
+    <div className="bg-[#0a1a13] border-b border-red-700/50 py-2 px-4">
+      <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
+        <span className="text-red-400 text-xs font-bold uppercase tracking-widest flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse inline-block"></span>
+          Promoção encerra em
+        </span>
+        <div className="flex items-center gap-1.5">
+          {[
+            { val: pad(h), label: "h" },
+            { val: pad(m), label: "m" },
+            { val: pad(s), label: "s" },
+          ].map((u, i) => (
+            <span key={u.label} className="flex items-center gap-1.5">
+              {i > 0 && <span className="text-red-500 font-black text-base">:</span>}
+              <span className="bg-black/60 border border-red-700/40 rounded px-2 py-0.5 text-white font-black text-base tabular-nums min-w-[34px] text-center">
+                {u.val}
+              </span>
+              <span className="text-gray-500 text-[10px] uppercase">{u.label}</span>
+            </span>
+          ))}
+        </div>
+        <span className="text-gray-400 text-xs hidden sm:block">•</span>
+        <span className="text-gray-300 text-xs font-medium">⚠️ Apenas <strong className="text-red-400">últimas unidades</strong> no estoque</span>
+      </div>
+    </div>
+  );
+}
+
 function ViewerCount() {
   const [count, setCount] = useState(47);
   useEffect(() => {
@@ -126,17 +158,11 @@ function ViewerCount() {
 }
 
 export default function LandingPage() {
-  const { h, m, s } = useCountdown(2 * 3600 + 37 * 60 + 14);
-
   return (
     <div className="gradient-bg min-h-screen text-white">
 
-      {/* URGENCY TOP BANNER */}
-      <div className="bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white py-2.5 px-4 text-center">
-        <p className="text-sm font-bold uppercase tracking-wide">
-          ⚠️ Promoção por tempo limitado — Estoque quase esgotado! Garanta o seu antes que acabe!
-        </p>
-      </div>
+      {/* URGENCY TOP BANNER — COUNTDOWN */}
+      <TopCountdownBanner />
 
       {/* NAV */}
       <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-3 bg-black/70 backdrop-blur-md border-b border-teal-900/40">
@@ -192,23 +218,6 @@ export default function LandingPage() {
           {/* Live viewers */}
           <div className="flex justify-center mb-5">
             <ViewerCount />
-          </div>
-
-          {/* Countdown */}
-          <div className="inline-flex flex-col items-center bg-black/50 border border-red-500/30 rounded-2xl px-6 py-4 mb-5">
-            <p className="text-red-400 text-xs font-bold uppercase tracking-widest mb-3">
-              ⏱ Promoção encerra em
-            </p>
-            <div className="flex items-center gap-2">
-              <CountdownUnit value={h} label="horas" />
-              <span className="text-red-400 font-black text-2xl pb-4">:</span>
-              <CountdownUnit value={m} label="min" />
-              <span className="text-red-400 font-black text-2xl pb-4">:</span>
-              <CountdownUnit value={s} label="seg" />
-            </div>
-            <p className="text-gray-400 text-xs mt-3">
-              ⚠️ Apenas <strong className="text-red-400">últimas unidades</strong> no estoque
-            </p>
           </div>
 
           <div className="inline-flex items-center gap-2 bg-red-600/15 border border-red-500/30 text-red-300 text-xs font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider animate-pulse">
