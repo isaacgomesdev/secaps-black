@@ -173,33 +173,27 @@ export default function LandingPage() {
 
       {/* HOW TO USE */}
       <section className="py-16 px-5 border-t border-white/5">
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div className="order-2 md:order-1">
-            <p className="text-[#00ddb4] text-xs font-semibold uppercase tracking-widest mb-3">Modo de uso</p>
-            <h2 className="text-2xl sm:text-3xl font-black uppercase mb-6">
-              Simples de usar,<br />resultado rápido.
-            </h2>
-            <div className="space-y-3">
-              {[
-                "Tome 2 cápsulas por dia, preferencialmente pela manhã.",
-                "30 minutos antes das suas refeições principais.",
-                "Pode tomar as duas juntas ou uma por refeição.",
-                "Não exceda 2 cápsulas diárias.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <span className="text-[#00ddb4] font-black text-sm w-5 flex-shrink-0 mt-0.5">{String(i + 1).padStart(2, "0")}</span>
-                  <p className="text-gray-300 text-sm leading-relaxed">{step}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 pt-5 border-t border-white/6">
-              <p className="text-white font-semibold text-sm mb-1">Quando começar a sentir?</p>
-              <p className="text-gray-400 text-sm">A redução do apetite pode acontecer já na primeira semana. Resultados visíveis em até 30 dias de uso contínuo.</p>
-            </div>
+        <div className="max-w-2xl mx-auto">
+          <p className="text-[#00ddb4] text-xs font-semibold uppercase tracking-widest mb-3 text-center">Modo de uso</p>
+          <h2 className="text-2xl sm:text-3xl font-black uppercase mb-8 text-center">
+            Simples de usar,<br />resultado rápido.
+          </h2>
+          <div className="space-y-3 mb-8">
+            {[
+              "Tome 2 cápsulas por dia, preferencialmente pela manhã.",
+              "30 minutos antes das suas refeições principais.",
+              "Pode tomar as duas juntas ou uma por refeição.",
+              "Não exceda 2 cápsulas diárias.",
+            ].map((step, i) => (
+              <div key={i} className="flex items-start gap-4 bg-white/3 border border-white/6 rounded-xl px-4 py-3.5">
+                <span className="text-[#00ddb4] font-black text-base w-6 flex-shrink-0">{String(i + 1).padStart(2, "0")}</span>
+                <p className="text-gray-300 text-sm leading-relaxed">{step}</p>
+              </div>
+            ))}
           </div>
-          <div className="order-1 md:order-2 relative">
-            <div className="absolute inset-0 bg-[#00ddb4]/6 blur-3xl rounded-full" />
-            <img src="/modo-de-uso.jpeg" alt="Como usar o Secaps Black" className="relative z-10 rounded-2xl w-full" />
+          <div className="bg-[#00ddb4]/6 border border-[#00ddb4]/15 rounded-xl px-5 py-4">
+            <p className="text-white font-semibold text-sm mb-1">Quando começar a sentir?</p>
+            <p className="text-gray-400 text-sm">A redução do apetite pode acontecer já na primeira semana. Resultados visíveis em até 30 dias de uso contínuo.</p>
           </div>
         </div>
       </section>
@@ -295,32 +289,26 @@ export default function LandingPage() {
 
       {/* ANVISA */}
       <section className="py-16 px-5 border-t border-white/5">
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <p className="text-[#00ddb4] text-xs font-semibold uppercase tracking-widest mb-3">Segurança</p>
-            <h2 className="text-2xl sm:text-3xl font-black uppercase mb-4">
-              Produto original,<br />regulamentado.
-            </h2>
-            <p className="text-gray-400 text-sm leading-relaxed mb-5">
-              O Secaps Black é fabricado conforme as normas da ANVISA e comercializado exclusivamente por revendedores autorizados.
-            </p>
-            <ul className="space-y-2 text-gray-400 text-sm mb-7">
-              {[
-                "Isento de registro — RDC 240/2018",
-                "Conformidade com RDC 27/2010 e 23/2000",
-                "Fabricado por Capsul Brasil S.A — Arcos, MG",
-                "Adquira apenas com revendedores autorizados",
-              ].map(item => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="text-[#00ddb4] font-bold mt-0.5 flex-shrink-0">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="relative">
-            <div className="absolute inset-0 bg-[#00ddb4]/6 blur-3xl rounded-full" />
-            <img src="/anvisa.png" alt="ANVISA" className="relative z-10 rounded-2xl w-full" />
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-[#00ddb4] text-xs font-semibold uppercase tracking-widest mb-3">Segurança</p>
+          <h2 className="text-2xl sm:text-3xl font-black uppercase mb-4">
+            Produto original,<br />regulamentado.
+          </h2>
+          <p className="text-gray-400 text-sm leading-relaxed mb-7 max-w-md mx-auto">
+            O Secaps Black é fabricado conforme as normas da ANVISA e comercializado exclusivamente por revendedores autorizados.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
+            {[
+              "Isento de registro — RDC 240/2018",
+              "Conformidade com RDC 27/2010 e 23/2000",
+              "Fabricado por Capsul Brasil S.A — Arcos, MG",
+              "Adquira apenas com revendedores autorizados",
+            ].map(item => (
+              <div key={item} className="flex items-start gap-3 bg-white/3 border border-white/6 rounded-xl px-4 py-3">
+                <span className="text-[#00ddb4] font-bold flex-shrink-0 mt-0.5">✓</span>
+                <p className="text-gray-300 text-sm">{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
