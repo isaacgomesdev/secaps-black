@@ -266,7 +266,7 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="relative">
             <div className="absolute inset-0 bg-amber-500/6 blur-3xl rounded-full" />
-            <img src="/garantia.png" alt="Garantia de 90 dias" className="relative z-10 rounded-2xl w-full" />
+            <img src="/garantia-90-dias.png" alt="Garantia de 90 dias" className="relative z-10 w-full" />
           </div>
           <div>
             <p className="text-amber-400 text-xs font-semibold uppercase tracking-widest mb-3">Sem risco</p>

@@ -44,6 +44,7 @@ const kits = [
     label: null as string | null, highlight: false,
     payUrl: "https://pay.hest.com.br/54136eed-6288-4a4f-8e1b-43c2f76d1083",
     tagline: "Para sentir os primeiros resultados.",
+    image: "/product-1.png",
   },
   {
     id: 3, name: "Kit 3 Meses", months: 3, bottles: 3, doses: 90,
@@ -53,6 +54,7 @@ const kits = [
     label: "Mais vendido", highlight: true,
     payUrl: "https://pay.hest.com.br/9daf0dbb-c2c1-49d4-ad74-d217f970b703",
     tagline: "Resultados sólidos e duradouros.",
+    image: "/product-3.png",
   },
   {
     id: 5, name: "Kit 5 Meses", months: 5, bottles: 5, doses: 150,
@@ -62,6 +64,7 @@ const kits = [
     label: "Melhor custo-benefício", highlight: false,
     payUrl: "https://pay.hest.com.br/b305215e-44bf-4263-aa90-670a0d53e78d",
     tagline: "Transformação completa, máxima economia.",
+    image: "/product-5.png",
   },
   {
     id: 12, name: "Kit 12 Meses", months: 12, bottles: 12, doses: 360,
@@ -71,6 +74,7 @@ const kits = [
     label: "Maior desconto", highlight: false,
     payUrl: "https://pay.hest.com.br/c5efdd0a-789f-48d3-b377-2f52600e86f4",
     tagline: "Estoque garantido por um ano inteiro.",
+    image: "/product-12.png",
   },
 ];
 
@@ -132,26 +136,20 @@ export default function ProductsPage() {
               )}
 
               <div className="p-5 flex flex-col flex-1">
-                {/* Kit header */}
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="flex flex-shrink-0">
-                    {Array.from({ length: Math.min(kit.bottles, 3) }).map((_, i) => (
-                      <img key={i} src="/produto-principal.jpeg" alt=""
-                        className="w-11 h-11 object-contain rounded-lg"
-                        style={{ marginLeft: i > 0 ? "-6px" : "0", zIndex: i, filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.6))" }} />
-                    ))}
-                    {kit.bottles > 3 && (
-                      <span className="self-end ml-1.5 text-[#00ddb4] font-black text-xs mb-0.5">×{kit.bottles}</span>
-                    )}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-black text-white">{kit.name}</h3>
-                    <p className="text-gray-500 text-xs mt-0.5">{kit.tagline}</p>
-                  </div>
+                {/* Kit image — centered, prominent */}
+                <div className="flex justify-center mb-4">
+                  <img src={kit.image} alt={kit.name}
+                    className="h-36 object-contain drop-shadow-[0_6px_24px_rgba(0,0,0,0.8)]" />
+                </div>
+
+                {/* Kit title */}
+                <div className="text-center mb-5">
+                  <h3 className="text-xl font-black text-white">{kit.name}</h3>
+                  <p className="text-gray-500 text-xs mt-1">{kit.tagline}</p>
                 </div>
 
                 {/* Details row */}
-                <div className="flex gap-3 text-xs text-gray-600 mb-5 pb-5 border-b border-white/5">
+                <div className="flex gap-3 text-xs text-gray-600 mb-5 pb-5 border-b border-white/5 justify-center">
                   <span>{kit.bottles} {kit.bottles === 1 ? "pote" : "potes"}</span>
                   <span>·</span>
                   <span>{kit.doses * 2} cápsulas</span>
