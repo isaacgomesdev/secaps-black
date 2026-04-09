@@ -161,8 +161,8 @@ export default function ProductsPage() {
                 <div className="flex-1 mb-5">
                   <div className="flex items-end justify-between mb-3">
                     <div>
-                      <p className="text-gray-500 text-xs mb-0.5">Valor por pote</p>
-                      <p className="text-[#00ddb4] font-black text-2xl leading-none">R$ {fmt(kit.pricePerBottle)}</p>
+                      <p className="text-gray-500 text-xs mb-0.5">Valor por dose</p>
+                      <p className="text-[#00ddb4] font-black text-2xl leading-none">R$ {fmt(kit.pricePerDay)}</p>
                     </div>
                     {kit.savingsPct && (
                       <span className="text-green-400 bg-green-500/10 border border-green-500/20 text-xs font-bold px-2.5 py-1 rounded-full">
@@ -177,7 +177,7 @@ export default function ProductsPage() {
                         {kit.originalPrice && (
                           <p className="text-gray-700 text-xs line-through">R$ {fmt(kit.originalPrice)}</p>
                         )}
-                        <p className="text-gray-500 text-xs">R$ {fmt(kit.pricePerDay)}/dia</p>
+                        <p className="text-gray-500 text-xs">Total do kit</p>
                       </div>
                       <p className="text-white font-black text-3xl leading-none">R$ {fmt(kit.price)}</p>
                     </div>
@@ -219,8 +219,8 @@ export default function ProductsPage() {
                 <tr className="border-b border-white/5">
                   <th className="text-left px-5 py-3 text-gray-500 font-medium text-xs">Kit</th>
                   <th className="text-right px-4 py-3 text-gray-500 font-medium text-xs">Total</th>
-                  <th className="text-right px-4 py-3 text-[#00ddb4] font-semibold text-xs">Por pote</th>
-                  <th className="text-right px-4 py-3 text-gray-500 font-medium text-xs">Por dia</th>
+                  <th className="text-right px-4 py-3 text-[#00ddb4] font-semibold text-xs">Por dose</th>
+                  <th className="text-right px-4 py-3 text-gray-500 font-medium text-xs hidden sm:table-cell">Doses</th>
                   <th className="text-right px-5 py-3 text-green-400 font-medium text-xs">Economia</th>
                 </tr>
               </thead>
@@ -234,8 +234,8 @@ export default function ProductsPage() {
                       )}
                     </td>
                     <td className="px-4 py-3.5 text-right text-sm text-white font-semibold">R$ {fmt(k.price)}</td>
-                    <td className="px-4 py-3.5 text-right text-base text-[#00ddb4] font-black">R$ {fmt(k.pricePerBottle)}</td>
-                    <td className="px-4 py-3.5 text-right text-sm text-gray-500">R$ {fmt(k.pricePerDay)}</td>
+                    <td className="px-4 py-3.5 text-right text-base text-[#00ddb4] font-black">R$ {fmt(k.pricePerDay)}</td>
+                    <td className="px-4 py-3.5 text-right text-sm text-gray-500 hidden sm:table-cell">{k.doses}</td>
                     <td className="px-5 py-3.5 text-right text-sm text-green-400 font-medium">
                       {k.savings ? `R$ ${fmt(k.savings)}` : "—"}
                     </td>
