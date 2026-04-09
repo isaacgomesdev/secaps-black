@@ -26,6 +26,27 @@
     src="https://www.facebook.com/tr?id=943052955324367&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <!-- Scroll Depth Tracking -->
+    <script>
+      window.addEventListener('scroll', function() {
+        var h = document.documentElement, b = document.body, st = 'scrollTop', sh = 'scrollHeight';
+        var percent = Math.round((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
+        
+        window._scrollMarks = window._scrollMarks || {};
+        var marks = [25, 50, 75, 90];
+        
+        marks.forEach(function(mark) {
+          if (percent >= mark && !window._scrollMarks[mark]) {
+            window._scrollMarks[mark] = true;
+            if (typeof fbq === 'function') {
+              fbq('trackCustom', 'Scroll', { percent_scrolled: mark });
+            }
+          }
+        });
+      });
+    </script>
+    <!-- End Scroll Depth -->
   </head>
   <body>
     <div id="root"></div>
