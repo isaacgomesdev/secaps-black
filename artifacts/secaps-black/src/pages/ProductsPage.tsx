@@ -90,8 +90,8 @@ export default function ProductsPage() {
             <span className="text-[#00ddb4]">SECAPS</span> BLACK
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/" className="text-gray-500 hover:text-white text-xs transition-colors">← Voltar</Link>
-            <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer"
+            <Link href="/secaps-black" className="text-gray-500 hover:text-white text-xs transition-colors">← Voltar</Link>
+            <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-top"
               className="btn-whatsapp text-white text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-1.5">
               <WaSvg />
               <span className="hidden sm:inline">Falar com Vendedor</span>
@@ -191,11 +191,11 @@ export default function ProductsPage() {
 
                 {/* Actions */}
                 <div className="flex flex-col gap-2 mt-auto">
-                  <a href={kit.payUrl} target="_blank" rel="noopener noreferrer"
+                  <a href={kit.payUrl} target="_blank" rel="noopener noreferrer" id={`btn-checkout-secaps-${kit.months}`}
                     className="btn-primary text-black font-bold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2">
                     Comprar agora
                   </a>
-                  <a href={makeWA(kit.name)} target="_blank" rel="noopener noreferrer"
+                  <a href={makeWA(kit.name)} target="_blank" rel="noopener noreferrer" id={`btn-whatsapp-secaps-${kit.months}`}
                     className="btn-whatsapp text-white font-semibold text-sm py-3 rounded-xl flex items-center justify-center gap-2">
                     <WaSvg />
                     Falar com Vendedor
@@ -274,7 +274,7 @@ export default function ProductsPage() {
       </footer>
 
       {/* FLOATING */}
-      <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer"
+      <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-floating"
         className="floating-btn btn-whatsapp text-white font-semibold px-4 py-3.5 rounded-full flex items-center gap-2 shadow-2xl text-sm">
         <WaSvg />
         <span>Falar com Vendedor</span>

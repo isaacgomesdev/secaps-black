@@ -66,13 +66,13 @@ export default function LandingPage() {
             <span className="text-[#00ddb4]">SECAPS</span> BLACK
           </span>
           <div className="flex items-center gap-2.5">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-top"
               className="btn-whatsapp text-white text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-1.5">
               <WaSvg />
               <span className="hidden sm:inline">Falar com Vendedor</span>
               <span className="sm:hidden">Contato</span>
             </a>
-            <Link href="/produtos"
+            <Link href="/secaps-black/produtos" id="btn-cta-secaps-top"
               className="btn-primary text-black text-xs font-bold px-3.5 py-2 rounded-full">
               Ver Kits
             </Link>
@@ -116,12 +116,12 @@ export default function LandingPage() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-3 mt-7 max-w-sm mx-auto sm:max-w-none sm:justify-center">
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-hero"
             className="btn-whatsapp text-white font-bold text-sm px-7 py-4 rounded-full flex items-center justify-center gap-2">
             <WaSvg />
             Falar com Vendedor
           </a>
-          <Link href="/produtos"
+          <Link href="/secaps-black/produtos" id="btn-cta-secaps-hero"
             className="btn-primary text-black font-bold text-sm px-7 py-4 rounded-full flex items-center justify-center">
             Ver os kits com desconto
           </Link>
@@ -246,7 +246,7 @@ export default function LandingPage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-testimonials"
               className="btn-whatsapp inline-flex items-center gap-2 text-white font-semibold text-sm px-7 py-4 rounded-full">
               <WaSvg />
               Falar com Vendedor
@@ -278,7 +278,7 @@ export default function LandingPage() {
                 </li>
               ))}
             </ul>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-guarantee"
               className="btn-whatsapp inline-flex items-center gap-2 text-white font-semibold text-sm px-7 py-4 rounded-full w-full sm:w-auto justify-center">
               <WaSvg />
               Falar com Vendedor
@@ -323,12 +323,12 @@ export default function LandingPage() {
             90 dias de garantia. Compra 100% segura.
           </p>
           <div className="flex flex-col gap-3">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-final"
               className="btn-whatsapp text-white font-bold text-sm px-7 py-4 rounded-full flex items-center justify-center gap-2 w-full">
               <WaSvg />
               Falar com Vendedor
             </a>
-            <Link href="/produtos"
+            <Link href="/secaps-black/produtos" id="btn-cta-secaps-final"
               className="btn-primary text-black font-bold text-sm px-7 py-4 rounded-full flex items-center justify-center w-full">
               Ver kits com desconto
             </Link>
@@ -347,7 +347,7 @@ export default function LandingPage() {
       </footer>
 
       {/* FLOATING BUTTON */}
-      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-floating"
         className="floating-btn btn-whatsapp text-white font-semibold px-4 py-3.5 rounded-full flex items-center gap-2 shadow-2xl text-sm">
         <WaSvg />
         <span>Falar com Vendedor</span>

@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Base Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,34 +18,8 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '943052955324367');
-    fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=943052955324367&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <!-- Scroll Depth Tracking -->
-    <script>
-      window.addEventListener('scroll', function() {
-        var h = document.documentElement, b = document.body, st = 'scrollTop', sh = 'scrollHeight';
-        var percent = Math.round((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
-        
-        window._scrollMarks = window._scrollMarks || {};
-        var marks = [25, 50, 75, 90];
-        
-        marks.forEach(function(mark) {
-          if (percent >= mark && !window._scrollMarks[mark]) {
-            window._scrollMarks[mark] = true;
-            if (typeof fbq === 'function') {
-              fbq('trackCustom', 'Scroll', { percent_scrolled: mark });
-            }
-          }
-        });
-      });
-    </script>
-    <!-- End Scroll Depth -->
+    <!-- End Meta Pixel Base Code -->
   </head>
   <body>
     <div id="root"></div>
