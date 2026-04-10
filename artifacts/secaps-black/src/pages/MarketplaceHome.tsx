@@ -7,30 +7,22 @@ export default function MarketplaceHome() {
       {/* Header Premium */}
       <header className="fixed w-full top-0 z-50 bg-black/80 backdrop-blur-md border-b border-[#B69145]/20">
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold tracking-tighter text-[#B69145]">
-              Viva Leve<span className="text-white">Mulher</span>
-            </span>
-          </div>
+          <Link href="/">
+            <a className="flex items-center">
+              <img src="/logo-horizontal.png" alt="Viva Leve Mulher" className="h-10" />
+            </a>
+          </Link>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B69145]/10 text-[#B69145] text-sm font-medium border border-[#B69145]/20">
-            <Star className="w-4 h-4 fill-current" />
-            Excelência em Saúde Íntima e Emagrecimento
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold">
-            Descubra o Poder <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#FFF1A0] to-[#997A00]">
-              da Sua Melhor Versão
-            </span>
-          </h1>
-          <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Nós reunimos os melhores e mais avançados tratamentos para a saúde da mulher em um só lugar. Fórmulas exclusivas para resultados reais.
-          </p>
+      {/* Hero / Banner Section */}
+      <section className="pt-28 pb-10 px-4">
+        <div className="max-w-6xl mx-auto">
+          <Link href="/secaps-black">
+            <a className="block rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(182,145,69,0.15)] hover:shadow-[0_0_60px_rgba(182,145,69,0.3)] transition-shadow duration-500">
+              <img src="/banner.png" alt="Secaps Black Banner" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-[2s]" />
+            </a>
+          </Link>
         </div>
       </section>
 

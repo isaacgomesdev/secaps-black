@@ -86,8 +86,8 @@ export default function ProductsPage() {
       {/* NAV */}
       <nav className="sticky top-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/6">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-5 py-3.5">
-          <Link href="/" className="font-black text-white tracking-tight text-base">
-            <span className="text-[#00ddb4]">SECAPS</span> BLACK
+          <Link href="/">
+            <a><img src="/logo-horizontal.png" alt="Viva Leve Mulher" className="h-8 sm:h-10" /></a>
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/secaps-black" className="text-gray-500 hover:text-white text-xs transition-colors">← Voltar</Link>

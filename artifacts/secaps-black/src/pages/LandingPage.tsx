@@ -62,9 +62,7 @@ export default function LandingPage() {
       {/* NAV */}
       <nav className="sticky top-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/6">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-5 py-3.5">
-          <span className="font-black text-white tracking-tight text-base">
-            <span className="text-[#00ddb4]">SECAPS</span> BLACK
-          </span>
+          <img src="/logo-horizontal.png" alt="Viva Leve Mulher" className="h-8 sm:h-10" />
           <div className="flex items-center gap-2.5">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-top"
               className="btn-whatsapp text-white text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-1.5">
