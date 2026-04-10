@@ -15,14 +15,22 @@ export default function MarketplaceHome() {
         </div>
       </header>
 
-      {/* Hero / Banner Section */}
-      <section className="pt-28 pb-10 px-4">
-        <div className="max-w-6xl mx-auto">
-          <Link href="/secaps-black">
-            <a className="block rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(182,145,69,0.15)] hover:shadow-[0_0_60px_rgba(182,145,69,0.3)] transition-shadow duration-500">
-              <img src="/banner.png" alt="Secaps Black Banner" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-[2s]" />
-            </a>
-          </Link>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-4">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B69145]/10 text-[#B69145] text-sm font-medium border border-[#B69145]/20">
+            <Star className="w-4 h-4 fill-current" />
+            Excelência em Saúde Íntima e Emagrecimento
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold">
+            Descubra o Poder <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#FFF1A0] to-[#997A00]">
+              da Sua Melhor Versão
+            </span>
+          </h1>
+          <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            Nós reunimos os melhores e mais avançados tratamentos para a saúde da mulher em um só lugar. Fórmulas exclusivas para resultados reais.
+          </p>
         </div>
       </section>
 
@@ -38,9 +46,9 @@ export default function MarketplaceHome() {
               <div className="aspect-square bg-gradient-to-br from-black to-zinc-800 p-8 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[#B69145]/5 group-hover:bg-[#B69145]/10 transition-colors" />
                 <img 
-                  src="/hero-pote.webp" 
+                  src="/banner.png" 
                   alt="Secaps Black" 
-                  className="w-full max-w-[200px] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500 relative z-10"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 relative z-10"
                 />
               </div>
               <div className="p-8">
