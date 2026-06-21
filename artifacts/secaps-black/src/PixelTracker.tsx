@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 
 // Definição de Pixels por Rota/Produto
 const PIXEL_MAP: Record<string, string> = {
-  "/secaps-black": "943052955324367",
+  "/velmo-black": "943052955324367",
   // "/detox": "1234567890", // Exemplo futuro
 };
 

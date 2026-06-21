@@ -16,9 +16,9 @@ function Router() {
       {/* Vitrine Global */}
       <Route path="/" component={MarketplaceHome} />
       
-      {/* Secaps Black Produto */}
-      <Route path="/secaps-black" component={LandingPage} />
-      <Route path="/secaps-black/produtos" component={ProductsPage} />
+      {/* Velmo Black Produto */}
+      <Route path="/velmo-black" component={LandingPage} />
+      <Route path="/velmo-black/produtos" component={ProductsPage} />
       
       {/* 404 */}
       <Route component={NotFound} />

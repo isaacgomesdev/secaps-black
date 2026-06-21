@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 
 const WHATSAPP_NUMBER = "558540420501";
-const WHATSAPP_MSG = encodeURIComponent("Olá! Quero saber mais sobre o Secaps Black!");
+const WHATSAPP_MSG = encodeURIComponent("Olá! Quero saber mais sobre o Velmo Black!");
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 
 const TESTIMONIAL_VIDEOS = [
@@ -29,13 +29,13 @@ function CountdownBar() {
   const { h, m, s } = useCountdown(2 * 3600 + 37 * 60 + 14);
   const pad = (n: number) => String(n).padStart(2, "0");
   return (
-    <div className="bg-black/80 py-2 px-4 text-center">
-      <span className="text-gray-400 text-xs mr-3">Promoção encerra em</span>
-      <span className="font-mono font-black text-white text-xs tracking-widest">
+    <div className="bg-[#1f1a17] py-2 px-4 text-center">
+      <span className="text-[#e8d5c4] text-xs mr-3">Promoção especial encerra em</span>
+      <span className="font-mono font-bold text-white text-xs tracking-widest">
         {pad(h)}:{pad(m)}:{pad(s)}
       </span>
-      <span className="text-gray-600 text-xs mx-3">·</span>
-      <span className="text-gray-400 text-xs">Estoque limitado</span>
+      <span className="text-gray-500 text-xs mx-3">·</span>
+      <span className="text-[#e8d5c4] text-xs">Estoque limitado</span>
     </div>
   );
 }
@@ -47,31 +47,31 @@ function ViewerCount() {
     return () => clearInterval(t);
   }, []);
   return (
-    <p className="text-gray-500 text-xs font-medium">
-      <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500 mr-1.5 align-middle" />
-      {count} pessoas vendo agora
+    <p className="text-stone-500 text-xs font-medium">
+      <span className="inline-block w-1.5 h-1.5 rounded-full bg-rose-400 mr-1.5 align-middle animate-pulse" />
+      {count} mulheres vendo agora
     </p>
   );
 }
 
 export default function LandingPage() {
   return (
-    <div className="gradient-bg min-h-screen text-white">
+    <div className="bg-[#FDFBF7] min-h-screen text-stone-800 font-sans selection:bg-rose-200">
       <CountdownBar />
 
       {/* NAV */}
-      <nav className="sticky top-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/6">
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-200/50 shadow-sm">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-5 py-3.5">
-          <img src="/logo-horizontal.png" alt="Viva Leve Mulher" className="h-8 sm:h-10" />
+          <img src="/images/velmo/logo-1.png" alt="Velmo Black" className="h-8 sm:h-10 object-contain" />
           <div className="flex items-center gap-2.5">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-top"
-              className="btn-whatsapp text-white text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-1.5">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-velmo-top"
+              className="btn-whatsapp text-white text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-1.5 shadow-md">
               <WaSvg />
               <span className="hidden sm:inline">Falar com Vendedor</span>
               <span className="sm:hidden">Contato</span>
             </a>
-            <Link href="/secaps-black/produtos" id="btn-cta-secaps-top"
-              className="btn-primary text-black text-xs font-bold px-3.5 py-2 rounded-full">
+            <Link href="/velmo-black/produtos" id="btn-cta-velmo-top"
+              className="bg-gradient-to-r from-stone-800 to-stone-900 hover:from-stone-700 hover:to-stone-800 text-[#F5E6D3] text-xs font-bold px-4 py-2 rounded-full shadow-md transition-all">
               Ver Kits
             </Link>
           </div>
@@ -79,232 +79,176 @@ export default function LandingPage() {
       </nav>
 
       {/* HERO */}
-      <section className="px-5 pt-12 pb-10 text-center max-w-3xl mx-auto">
-        <p className="text-[#00ddb4] text-xs font-semibold uppercase tracking-widest mb-5">
-          Revendedora Autorizada · @vivalevemulher.shop
-        </p>
-        <h1 className="text-[clamp(2.4rem,9vw,5rem)] font-black uppercase leading-[1.05] mb-4 tracking-tight">
-          Queime gordura<br />
-          <span className="text-[#00ddb4]">de verdade.</span>
-        </h1>
-        <p className="text-gray-400 text-base sm:text-lg max-w-md mx-auto mb-2 leading-relaxed">
-          A fórmula que está transformando o corpo de mais de{" "}
-          <span className="text-white font-semibold">100 mil brasileiras</span>.
-        </p>
-        <div className="flex items-center justify-center gap-1.5 mb-8">
-          <span className="text-[#FFD700] text-sm">★★★★</span>
-          <span className="text-[#FFD700] text-sm opacity-50">★</span>
-          <span className="text-gray-500 text-xs ml-1">4.8 · +100.000 clientes</span>
-          <span className="text-gray-700 mx-2">·</span>
-          <ViewerCount />
-        </div>
+      <section className="px-5 pt-12 pb-16 text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div className="flex-1 text-left">
+          <p className="text-rose-500 text-xs font-bold uppercase tracking-widest mb-4">
+            Emagreça com saúde e disposição
+          </p>
+          <h1 className="text-[clamp(2.4rem,6vw,4rem)] font-black uppercase leading-[1.05] mb-5 tracking-tight text-stone-900">
+            Assuma o controle<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-amber-500">do seu corpo.</span>
+          </h1>
+          <p className="text-stone-600 text-base sm:text-lg max-w-md mb-6 leading-relaxed">
+            Velmo Black atua no controle do apetite, metabolismo e redução da vontade por doces. Tudo o que você precisa em uma cápsula.
+          </p>
+          
+          <div className="flex items-center gap-1.5 mb-8">
+            <span className="text-amber-400 text-sm">★★★★</span>
+            <span className="text-amber-400 text-sm">★</span>
+            <span className="text-stone-500 text-xs ml-1 font-medium">4.8 de 5 avaliações</span>
+            <span className="text-stone-300 mx-2">|</span>
+            <ViewerCount />
+          </div>
 
-        {/* VSL */}
-        <div className="rounded-2xl overflow-hidden border border-white/8 shadow-[0_0_60px_rgba(0,221,180,0.1)]">
-          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-            <iframe className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/R-Syv38lqmI?rel=0&modestbranding=1&color=white"
-              title="Secaps Black — Nutricionista revela o segredo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen />
+          <div className="flex flex-col sm:flex-row gap-3 max-w-sm sm:max-w-none">
+            <Link href="/velmo-black/produtos" id="btn-cta-velmo-hero"
+              className="bg-gradient-to-r from-stone-900 to-black text-[#F5E6D3] font-bold text-sm px-8 py-4 rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-transform">
+              Ver os kits com desconto
+            </Link>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-velmo-hero"
+              className="bg-white border border-stone-200 text-stone-700 font-bold text-sm px-8 py-4 rounded-full flex items-center justify-center gap-2 shadow-sm hover:bg-stone-50 transition-colors">
+              <WaSvg />
+              Tirar Dúvidas
+            </a>
           </div>
         </div>
-        <p className="text-gray-600 text-xs mt-2">Ative o som · Informações importantes sobre sua saúde</p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3 mt-7 max-w-sm mx-auto sm:max-w-none sm:justify-center">
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-hero"
-            className="btn-whatsapp text-white font-bold text-sm px-7 py-4 rounded-full flex items-center justify-center gap-2">
-            <WaSvg />
-            Falar com Vendedor
-          </a>
-          <Link href="/secaps-black/produtos" id="btn-cta-secaps-hero"
-            className="btn-primary text-black font-bold text-sm px-7 py-4 rounded-full flex items-center justify-center">
-            Ver os kits com desconto
-          </Link>
+        <div className="flex-1 relative w-full max-w-md">
+          <div className="absolute inset-0 bg-gradient-to-tr from-rose-100 to-amber-50 rounded-full blur-3xl opacity-60"></div>
+          <img src="/images/velmo/mockup.png" alt="Potes Velmo Black" className="relative z-10 w-full drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
         </div>
       </section>
 
       {/* NUMBERS STRIP */}
-      <div className="border-y border-white/6 bg-white/2 py-5 px-5">
-        <div className="max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-5">
+      <div className="bg-white border-y border-stone-100 py-8 px-5 shadow-sm">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { val: "+100 mil", label: "clientes satisfeitas" },
-            { val: "4.8 / 5", label: "avaliação média" },
-            { val: "90 dias", label: "garantia total" },
-            { val: "11 ativos", label: "fórmula exclusiva" },
+            { val: "Apetite", label: "Menos fome e compulsão" },
+            { val: "Energia", label: "Mais disposição no dia a dia" },
+            { val: "Doces", label: "Redução da vontade" },
+            { val: "30 dias", label: "Garantia incondicional" },
           ].map(item => (
             <div key={item.label} className="text-center">
-              <p className="text-[#00ddb4] font-black text-xl leading-none">{item.val}</p>
-              <p className="text-gray-500 text-xs mt-1">{item.label}</p>
+              <p className="text-stone-800 font-black text-xl leading-none mb-1">{item.val}</p>
+              <p className="text-stone-500 text-xs">{item.label}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* BENEFITS */}
-      <section className="py-16 px-5 max-w-4xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-black uppercase text-center mb-2">
-          O que o Secaps Black <span className="text-[#00ddb4]">faz por você</span>
-        </h2>
-        <p className="text-gray-500 text-sm text-center mb-10">Uma fórmula completa, não apenas um termogênico.</p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <section className="py-20 px-5 max-w-5xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-black uppercase text-stone-900 mb-3">
+            Por que escolher o <span className="text-rose-500">Velmo Black?</span>
+          </h2>
+          <p className="text-stone-500 text-sm max-w-xl mx-auto">Uma fórmula premium, equilibrada e desenvolvida especificamente para a rotina e o corpo da mulher.</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { icon: "🔥", title: "Queima de gordura", desc: "Acelera o metabolismo 24h por dia" },
-            { icon: "🍃", title: "Menos apetite", desc: "Controla a fome e a compulsão" },
-            { icon: "⚡", title: "Mais energia", desc: "Foco e disposição no dia a dia" },
-            { icon: "🌿", title: "Intestino regulado", desc: "Funcionamento saudável e leve" },
-            { icon: "💪", title: "Definição corporal", desc: "Auxilia na preservação muscular" },
-            { icon: "🩸", title: "Glicose estável", desc: "Controla os níveis de açúcar no sangue" },
-            { icon: "✳️", title: "Fórmula limpa", desc: "Sem glúten, lactose ou açúcar" },
-            { icon: "🛡", title: "11 ingredientes", desc: "Selecionados por alta eficácia" },
+            { icon: "✨", title: "Controle da Fome", desc: "Auxilia na sensação de saciedade prolongada" },
+            { icon: "🍫", title: "Menos Doces", desc: "Apoia a redução da compulsão por açúcar" },
+            { icon: "⚡", title: "Metabolismo", desc: "Suporte energético moderado e equilibrado" },
+            { icon: "🧘‍♀️", title: "Bem-estar", desc: "Associação de ingredientes para disposição mental" },
+            { icon: "🛡️", title: "Antioxidante", desc: "Proteção celular e suporte imunológico" },
+            { icon: "💊", title: "Praticidade", desc: "Apenas 2 cápsulas ao dia na sua rotina" },
           ].map(b => (
-            <div key={b.title} className="bg-white/3 border border-white/6 rounded-xl p-4 hover:border-[#00ddb4]/30 transition-colors">
-              <div className="text-xl mb-2">{b.icon}</div>
-              <p className="text-white font-semibold text-sm leading-tight mb-1">{b.title}</p>
-              <p className="text-gray-500 text-xs leading-snug hidden sm:block">{b.desc}</p>
+            <div key={b.title} className="bg-white border border-stone-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-full bg-rose-50 flex items-center justify-center text-2xl mb-4">{b.icon}</div>
+              <p className="text-stone-900 font-bold text-lg mb-2">{b.title}</p>
+              <p className="text-stone-500 text-sm leading-relaxed">{b.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* HOW TO USE */}
-      <section className="py-16 px-5 border-t border-white/5">
-        <div className="max-w-2xl mx-auto">
-          <p className="text-[#00ddb4] text-xs font-semibold uppercase tracking-widest mb-3 text-center">Modo de uso</p>
-          <h2 className="text-2xl sm:text-3xl font-black uppercase mb-8 text-center">
-            Simples de usar,<br />resultado rápido.
-          </h2>
-          <div className="space-y-3 mb-8">
-            {[
-              "Tome 2 cápsulas por dia, preferencialmente pela manhã.",
-              "30 minutos antes das suas refeições principais.",
-              "Pode tomar as duas juntas ou uma por refeição.",
-              "Não exceda 2 cápsulas diárias.",
-            ].map((step, i) => (
-              <div key={i} className="flex items-start gap-4 bg-white/3 border border-white/6 rounded-xl px-4 py-3.5">
-                <span className="text-[#00ddb4] font-black text-base w-6 flex-shrink-0">{String(i + 1).padStart(2, "0")}</span>
-                <p className="text-gray-300 text-sm leading-relaxed">{step}</p>
-              </div>
-            ))}
-          </div>
-          <div className="bg-[#00ddb4]/6 border border-[#00ddb4]/15 rounded-xl px-5 py-4">
-            <p className="text-white font-semibold text-sm mb-1">Quando começar a sentir?</p>
-            <p className="text-gray-400 text-sm">A redução do apetite pode acontecer já na primeira semana. Resultados visíveis em até 30 dias de uso contínuo.</p>
-          </div>
-        </div>
-      </section>
-
       {/* INGREDIENTS */}
-      <section className="py-16 px-5 border-t border-white/5">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[#00ddb4] text-xs font-semibold uppercase tracking-widest mb-3">Composição</p>
-          <h2 className="text-2xl sm:text-3xl font-black uppercase mb-2">Ingredientes naturais</h2>
-          <p className="text-gray-500 text-sm mb-8">11 ativos selecionados para máxima eficácia</p>
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {["Fibras", "Psyllium", "Chia", "Café Verde", "Laranja Moro", "Quitosana", "Carnitina", "Cromo", "Spirulina", "+ 2 Ativos Exclusivos"].map(ing => (
-              <span key={ing} className="bg-[#00ddb4]/8 border border-[#00ddb4]/20 text-[#00ddb4] text-xs px-4 py-1.5 rounded-full font-medium">
-                {ing}
-              </span>
-            ))}
+      <section className="py-20 px-5 bg-stone-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/velmo/logo-3.png')] opacity-5 bg-center bg-no-repeat bg-contain"></div>
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <p className="text-rose-400 text-xs font-bold uppercase tracking-widest mb-3">Fórmula Premium</p>
+            <h2 className="text-2xl sm:text-3xl font-black uppercase mb-4">Ingredientes Estratégicos</h2>
+            <p className="text-stone-400 text-sm">Sem estimulantes agressivos. Foco no equilíbrio.</p>
           </div>
-          <div className="grid grid-cols-4 gap-3 max-w-sm mx-auto">
-            {["Zero açúcar", "Sem lactose", "Sem glúten", "100% natural"].map(item => (
-              <div key={item} className="bg-white/3 border border-white/6 rounded-xl py-2.5 px-1 text-center">
-                <p className="text-gray-300 text-[11px] font-medium leading-tight">{item}</p>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {[
+              { title: "L-Triptofano", desc: "Precursor da serotonina. Auxilia no equilíbrio do humor e na redução da vontade de doces." },
+              { title: "Antocianinas (Laranja Moro)", desc: "Antioxidantes naturais que auxiliam nas estratégias de controle de peso." },
+              { title: "Cromo", desc: "Mineral essencial que participa do metabolismo da glicose e ação da insulina." },
+              { title: "Cafeína Moderada", desc: "Suporte energético e estado de alerta sem causar efeitos estimulantes extremos." },
+              { title: "Vitamina C", desc: "Importante ação antioxidante, proteção celular e participação na formação de colágeno." },
+              { title: "Proantocianidinas (Canela)", desc: "Compostos bioativos que complementam a ação metabólica." },
+            ].map(ing => (
+              <div key={ing.title} className="bg-stone-800/50 border border-stone-700/50 rounded-xl p-5 backdrop-blur-sm">
+                <h3 className="text-rose-300 font-bold mb-1">{ing.title}</h3>
+                <p className="text-stone-300 text-sm leading-relaxed">{ing.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-16 px-5 border-t border-white/5">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-[#00ddb4] text-xs font-semibold uppercase tracking-widest text-center mb-3">Depoimentos</p>
-          <h2 className="text-2xl sm:text-3xl font-black uppercase text-center mb-2">
-            Quem já usou está amando
-          </h2>
-          <p className="text-gray-500 text-sm text-center mb-10 max-w-sm mx-auto">
-            Resultados reais de clientes que transformaram o corpo com o Secaps Black.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {TESTIMONIAL_VIDEOS.map((v, i) => (
-              <div key={v.id} className="rounded-xl overflow-hidden border border-white/8">
-                <div className="relative w-full" style={{ paddingBottom: "177.78%" }}>
-                  <iframe className="absolute inset-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1`}
-                    title={`Depoimento ${i + 1}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen />
+      {/* HOW TO USE */}
+      <section className="py-20 px-5 bg-white">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div className="flex-1">
+            <p className="text-stone-400 text-xs font-bold uppercase tracking-widest mb-3">Como usar</p>
+            <h2 className="text-2xl sm:text-3xl font-black uppercase text-stone-900 mb-6">Rotina Simples</h2>
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-stone-800 font-black flex-shrink-0">1</div>
+                <div>
+                  <h4 className="font-bold text-stone-900 mb-1">2 cápsulas ao dia</h4>
+                  <p className="text-stone-500 text-sm">Preferencialmente 30 minutos antes das principais refeições (café da manhã e almoço).</p>
                 </div>
               </div>
-            ))}
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-stone-800 font-black flex-shrink-0">2</div>
+                <div>
+                  <h4 className="font-bold text-stone-900 mb-1">Hidratação</h4>
+                  <p className="text-stone-500 text-sm">Ingerir com um copo de água para melhor absorção dos nutrientes.</p>
+                </div>
+              </div>
+              <div className="bg-rose-50 border border-rose-100 rounded-xl p-5 mt-4">
+                <h4 className="font-bold text-rose-900 text-sm mb-1">Tempo de resultado?</h4>
+                <p className="text-rose-800/80 text-sm">Nas primeiras semanas nota-se maior saciedade e energia. Após 30 dias, os benefícios metabólicos tornam-se mais evidentes.</p>
+              </div>
+            </div>
           </div>
-          <div className="text-center mt-10">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-testimonials"
-              className="btn-whatsapp inline-flex items-center gap-2 text-white font-semibold text-sm px-7 py-4 rounded-full">
-              <WaSvg />
-              Falar com Vendedor
-            </a>
+          <div className="flex-1 w-full flex justify-center">
+             <img src="/images/velmo/potes-1.png" alt="Pote Velmo Black" className="w-2/3 max-w-sm drop-shadow-xl" />
           </div>
         </div>
       </section>
 
       {/* GUARANTEE */}
-      <section className="py-16 px-5 border-t border-white/5">
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div className="relative">
-            <div className="absolute inset-0 bg-amber-500/6 blur-3xl rounded-full" />
-            <img src="/garantia-90-dias.png" alt="Garantia de 90 dias" className="relative z-10 w-full" />
-          </div>
-          <div>
-            <p className="text-amber-400 text-xs font-semibold uppercase tracking-widest mb-3">Sem risco</p>
-            <h2 className="text-2xl sm:text-3xl font-black uppercase mb-4">
-              Garantia total<br />de 90 dias.
-            </h2>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Experimente por 90 dias. Se não gostar dos resultados por qualquer motivo, devolvemos <strong className="text-white">100% do seu dinheiro</strong>. Sem burocracia, sem perguntas.
-            </p>
-            <ul className="space-y-2 text-gray-400 text-sm mb-7">
-              {["90 dias para testar sem pressão", "Reembolso total garantido", "Processo simples e rápido"].map(item => (
-                <li key={item} className="flex items-center gap-2">
-                  <span className="text-[#00ddb4] font-bold">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-guarantee"
-              className="btn-whatsapp inline-flex items-center gap-2 text-white font-semibold text-sm px-7 py-4 rounded-full w-full sm:w-auto justify-center">
-              <WaSvg />
-              Falar com Vendedor
-            </a>
-          </div>
+      <section className="py-20 px-5 bg-amber-50">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl font-black uppercase text-stone-900 mb-4">Garantia de 30 dias</h2>
+          <p className="text-stone-600 text-base leading-relaxed mb-8">
+            O Velmo Black possui garantia de 30 dias. Caso você não fique satisfeita com o produto, poderá solicitar o reembolso dentro desse período, oferecendo mais segurança na sua compra.
+          </p>
+          <Link href="/velmo-black/produtos" id="btn-cta-velmo-guarantee"
+            className="bg-gradient-to-r from-stone-900 to-black text-[#F5E6D3] font-bold text-sm px-8 py-4 rounded-full inline-flex items-center justify-center shadow-xl hover:scale-105 transition-transform">
+            Experimentar sem risco
+          </Link>
         </div>
       </section>
 
-      {/* ANVISA */}
-      <section className="py-16 px-5 border-t border-white/5">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-[#00ddb4] text-xs font-semibold uppercase tracking-widest mb-3">Segurança</p>
-          <h2 className="text-2xl sm:text-3xl font-black uppercase mb-4">
-            Produto original,<br />regulamentado.
-          </h2>
-          <p className="text-gray-400 text-sm leading-relaxed mb-7 max-w-md mx-auto">
-            O Secaps Black é fabricado conforme as normas da ANVISA e comercializado exclusivamente por revendedores autorizados.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
+      {/* FAQ */}
+      <section className="py-20 px-5 bg-white border-t border-stone-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-black uppercase text-center text-stone-900 mb-10">Dúvidas Frequentes</h2>
+          <div className="space-y-4">
             {[
-              "Isento de registro — RDC 240/2018",
-              "Conformidade com RDC 27/2010 e 23/2000",
-              "Fabricado por Capsul Brasil S.A — Arcos, MG",
-              "Adquira apenas com revendedores autorizados",
-            ].map(item => (
-              <div key={item} className="flex items-start gap-3 bg-white/3 border border-white/6 rounded-xl px-4 py-3">
-                <span className="text-[#00ddb4] font-bold flex-shrink-0 mt-0.5">✓</span>
-                <p className="text-gray-300 text-sm">{item}</p>
+              { q: "Quem pode tomar o Velmo Black?", a: "Indicado para adultos a partir de 19 anos. Não recomendado para gestantes e lactantes salvo sob orientação médica." },
+              { q: "Tem efeitos colaterais?", a: "Geralmente bem tolerado. Em casos raros de sensibilidade à cafeína, pode ocorrer dor de cabeça leve ou insônia." },
+              { q: "Posso tomar com outros medicamentos?", a: "Pode ser utilizado, mas é importante consultar um médico antes se você tiver diabetes, hipertensão, ou uso contínuo de controlados." },
+              { q: "Em quanto tempo recebo o produto?", a: "A entrega é realizada pelos Correios e pode ocorrer em até 15 dias úteis após a postagem, dependendo da sua região." }
+            ].map((faq, i) => (
+              <div key={i} className="border border-stone-200 rounded-xl p-5">
+                <h4 className="font-bold text-stone-900 mb-2">{faq.q}</h4>
+                <p className="text-stone-500 text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -312,43 +256,43 @@ export default function LandingPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-20 px-5 text-center border-t border-white/5">
+      <section className="py-20 px-5 bg-stone-900 text-center text-white">
         <div className="max-w-sm mx-auto">
-          <h2 className="text-2xl sm:text-4xl font-black uppercase mb-3">
-            Pronta para<br /><span className="text-[#00ddb4]">começar?</span>
+          <img src="/images/velmo/logo-1.png" alt="Velmo Black" className="h-10 mx-auto mb-8 brightness-0 invert opacity-80" />
+          <h2 className="text-2xl sm:text-3xl font-black uppercase mb-4">
+            Dê o primeiro passo
           </h2>
-          <p className="text-gray-500 text-sm mb-8">
-            90 dias de garantia. Compra 100% segura.
+          <p className="text-stone-400 text-sm mb-8">
+            Escolha seu kit e inicie sua transformação hoje mesmo.
           </p>
           <div className="flex flex-col gap-3">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-final"
+            <Link href="/velmo-black/produtos" id="btn-cta-velmo-final"
+              className="bg-gradient-to-r from-rose-400 to-rose-500 text-white font-bold text-sm px-7 py-4 rounded-full flex items-center justify-center w-full shadow-lg">
+              Ver kits com desconto
+            </Link>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-velmo-final"
               className="btn-whatsapp text-white font-bold text-sm px-7 py-4 rounded-full flex items-center justify-center gap-2 w-full">
               <WaSvg />
               Falar com Vendedor
             </a>
-            <Link href="/secaps-black/produtos" id="btn-cta-secaps-final"
-              className="btn-primary text-black font-bold text-sm px-7 py-4 rounded-full flex items-center justify-center w-full">
-              Ver kits com desconto
-            </Link>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/5 py-8 px-5 text-center">
-        <p className="text-[#00ddb4]/50 text-xs font-medium mb-2">@vivalevemulher.shop · Revendedora Autorizada</p>
-        <p className="text-gray-700 text-xs leading-relaxed max-w-md mx-auto">
+      <footer className="bg-stone-950 py-10 px-5 text-center">
+        <p className="text-stone-500 text-xs font-medium mb-3">@vivalevemulher.shop · Revendedora Autorizada</p>
+        <p className="text-stone-600 text-xs leading-relaxed max-w-md mx-auto">
           Suplemento alimentar isento de registro conforme ANVISA RDC 240/2018 · CNPJ 29.822.523/0002-86<br />
-          Indicado para maiores de 19 anos. Contraindicado para gestantes, lactantes e alérgicos a frutos do mar.<br />
-          Consulte um profissional de saúde antes de iniciar qualquer suplementação.
+          O Velmo Black não substitui alimentação equilibrada, prática de exercícios e acompanhamento profissional.
         </p>
       </footer>
 
       {/* FLOATING BUTTON */}
-      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-floating"
-        className="floating-btn btn-whatsapp text-white font-semibold px-4 py-3.5 rounded-full flex items-center gap-2 shadow-2xl text-sm">
+      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-velmo-floating"
+        className="fixed bottom-6 right-6 btn-whatsapp text-white font-semibold px-4 py-3.5 rounded-full flex items-center gap-2 shadow-2xl text-sm z-50 hover:scale-105 transition-transform">
         <WaSvg />
-        <span>Falar com Vendedor</span>
+        <span className="hidden sm:inline">Falar com Vendedor</span>
       </a>
     </div>
   );

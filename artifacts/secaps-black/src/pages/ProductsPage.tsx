@@ -2,8 +2,8 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 
 const WHATSAPP_NUMBER = "558540420501";
-const makeWA = (kitName: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Quero comprar o ${kitName} do Secaps Black!`)}`;
-const WA_GENERAL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Quero saber mais sobre o Secaps Black!")}`;
+const makeWA = (kitName: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Quero comprar o ${kitName} do Velmo Black!`)}`;
+const WA_GENERAL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Quero saber mais sobre o Velmo Black!")}`;
 
 const WaSvg = () => (
   <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
@@ -24,11 +24,11 @@ function CountdownBar() {
   const { h, m, s } = useCountdown(2 * 3600 + 37 * 60 + 14);
   const pad = (n: number) => String(n).padStart(2, "0");
   return (
-    <div className="bg-black/80 py-2 px-4 text-center">
-      <span className="text-gray-400 text-xs mr-3">Promoção encerra em</span>
-      <span className="font-mono font-black text-white text-xs tracking-widest">{pad(h)}:{pad(m)}:{pad(s)}</span>
-      <span className="text-gray-600 text-xs mx-3">·</span>
-      <span className="text-gray-400 text-xs">Estoque limitado</span>
+    <div className="bg-[#1f1a17] py-2 px-4 text-center">
+      <span className="text-[#e8d5c4] text-xs mr-3">Promoção encerra em</span>
+      <span className="font-mono font-bold text-white text-xs tracking-widest">{pad(h)}:{pad(m)}:{pad(s)}</span>
+      <span className="text-gray-500 text-xs mx-3">·</span>
+      <span className="text-[#e8d5c4] text-xs">Estoque limitado</span>
     </div>
   );
 }
@@ -44,7 +44,7 @@ const kits = [
     label: null as string | null, highlight: false,
     payUrl: "https://pay.hest.com.br/54136eed-6288-4a4f-8e1b-43c2f76d1083",
     tagline: "Para sentir os primeiros resultados.",
-    image: "/product-1.png",
+    image: "/images/velmo/potes-1.png",
   },
   {
     id: 3, name: "Kit 3 Meses", months: 3, bottles: 3, doses: 90,
@@ -54,7 +54,7 @@ const kits = [
     label: "Mais vendido", highlight: true,
     payUrl: "https://pay.hest.com.br/9daf0dbb-c2c1-49d4-ad74-d217f970b703",
     tagline: "Resultados sólidos e duradouros.",
-    image: "/product-3.png",
+    image: "/images/velmo/potes-3.png",
   },
   {
     id: 5, name: "Kit 5 Meses", months: 5, bottles: 5, doses: 150,
@@ -64,7 +64,7 @@ const kits = [
     label: "Melhor custo-benefício", highlight: false,
     payUrl: "https://pay.hest.com.br/b305215e-44bf-4263-aa90-670a0d53e78d",
     tagline: "Transformação completa, máxima economia.",
-    image: "/product-5.png",
+    image: "/images/velmo/potes-5.png",
   },
   {
     id: 12, name: "Kit 12 Meses", months: 12, bottles: 12, doses: 360,
@@ -74,25 +74,25 @@ const kits = [
     label: "Maior desconto", highlight: false,
     payUrl: "https://pay.hest.com.br/c5efdd0a-789f-48d3-b377-2f52600e86f4",
     tagline: "Estoque garantido por um ano inteiro.",
-    image: "/product-12.png",
+    image: "/images/velmo/potes-5.png", // Reusing potes-5 for visual, if 12 doesn't exist
   },
 ];
 
 export default function ProductsPage() {
   return (
-    <div className="gradient-bg min-h-screen text-white">
+    <div className="bg-[#FDFBF7] min-h-screen text-stone-800 font-sans selection:bg-rose-200">
       <CountdownBar />
 
       {/* NAV */}
-      <nav className="sticky top-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/6">
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-200/50 shadow-sm">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-5 py-3.5">
           <Link href="/">
-            <a><img src="/logo-horizontal.png" alt="Viva Leve Mulher" className="h-8 sm:h-10" /></a>
+            <a><img src="/images/velmo/logo-1.png" alt="Velmo Black" className="h-8 sm:h-10 object-contain" /></a>
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/secaps-black" className="text-gray-500 hover:text-white text-xs transition-colors">← Voltar</Link>
-            <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-top"
-              className="btn-whatsapp text-white text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-1.5">
+            <Link href="/velmo-black" className="text-stone-500 hover:text-stone-800 text-xs transition-colors font-medium">← Voltar para o site</Link>
+            <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-velmo-top"
+              className="btn-whatsapp text-white text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-1.5 shadow-md">
               <WaSvg />
               <span className="hidden sm:inline">Falar com Vendedor</span>
               <span className="sm:hidden">Contato</span>
@@ -102,54 +102,54 @@ export default function ProductsPage() {
       </nav>
 
       {/* HEADER */}
-      <div className="pt-12 pb-8 px-5 text-center max-w-lg mx-auto">
-        <p className="text-[#00ddb4] text-xs font-semibold uppercase tracking-widest mb-4">
+      <div className="pt-16 pb-10 px-5 text-center max-w-lg mx-auto">
+        <p className="text-rose-500 text-xs font-bold uppercase tracking-widest mb-4">
           Revendedora Autorizada · @vivalevemulher.shop
         </p>
-        <h1 className="text-3xl sm:text-4xl font-black uppercase mb-3">
-          Escolha seu <span className="text-[#00ddb4]">kit</span>
+        <h1 className="text-3xl sm:text-4xl font-black uppercase mb-3 text-stone-900">
+          Escolha seu <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-amber-500">kit</span>
         </h1>
-        <p className="text-gray-500 text-sm">
+        <p className="text-stone-500 text-sm">
           Quanto maior o kit, menor o valor por pote — e maior a economia.
         </p>
       </div>
 
       {/* KIT CARDS */}
-      <div className="max-w-4xl mx-auto px-4 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="max-w-5xl mx-auto px-4 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {kits.map(kit => (
-            <div key={kit.id} className={`relative rounded-2xl flex flex-col overflow-hidden transition-all duration-200 ${
+            <div key={kit.id} className={`relative rounded-3xl flex flex-col overflow-hidden transition-all duration-300 ${
               kit.highlight
-                ? "border-2 border-[#00ddb4] bg-[#0b1e15] shadow-[0_0_40px_rgba(0,221,180,0.08)]"
-                : "border border-white/7 bg-[#0a1910] hover:border-white/15"
+                ? "border-2 border-rose-400 bg-white shadow-xl scale-[1.02]"
+                : "border border-stone-200 bg-white hover:border-stone-300 shadow-sm"
             }`}>
 
               {/* Label */}
               {kit.label && (
-                <div className={`px-5 py-2 text-xs font-semibold uppercase tracking-widest ${
+                <div className={`px-5 py-2 text-xs font-bold uppercase tracking-widest text-center ${
                   kit.highlight
-                    ? "bg-[#00ddb4]/10 text-[#00ddb4] border-b border-[#00ddb4]/15"
-                    : "bg-white/4 text-gray-500 border-b border-white/5"
+                    ? "bg-rose-50 text-rose-600 border-b border-rose-100"
+                    : "bg-stone-50 text-stone-500 border-b border-stone-100"
                 }`}>
                   {kit.label}
                 </div>
               )}
 
-              <div className="p-5 flex flex-col flex-1">
-                {/* Kit image — centered, prominent */}
-                <div className="flex justify-center mb-4">
+              <div className="p-6 sm:p-8 flex flex-col flex-1">
+                {/* Kit image */}
+                <div className="flex justify-center mb-6">
                   <img src={kit.image} alt={kit.name}
-                    className="h-36 object-contain drop-shadow-[0_6px_24px_rgba(0,0,0,0.8)]" />
+                    className="h-40 object-contain drop-shadow-xl" />
                 </div>
 
                 {/* Kit title */}
-                <div className="text-center mb-5">
-                  <h3 className="text-xl font-black text-white">{kit.name}</h3>
-                  <p className="text-gray-500 text-xs mt-1">{kit.tagline}</p>
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-black text-stone-900">{kit.name}</h3>
+                  <p className="text-stone-500 text-sm mt-1">{kit.tagline}</p>
                 </div>
 
                 {/* Details row */}
-                <div className="flex gap-3 text-xs text-gray-600 mb-5 pb-5 border-b border-white/5 justify-center">
+                <div className="flex gap-3 text-xs text-stone-500 mb-6 pb-6 border-b border-stone-100 justify-center font-medium">
                   <span>{kit.bottles} {kit.bottles === 1 ? "pote" : "potes"}</span>
                   <span>·</span>
                   <span>{kit.doses * 2} cápsulas</span>
@@ -158,31 +158,31 @@ export default function ProductsPage() {
                 </div>
 
                 {/* Price */}
-                <div className="flex-1 mb-5">
-                  <div className="flex items-end justify-between mb-3">
+                <div className="flex-1 mb-8">
+                  <div className="flex items-end justify-between mb-4">
                     <div>
-                      <p className="text-gray-500 text-xs mb-0.5">Valor por dose</p>
-                      <p className="text-[#00ddb4] font-black text-2xl leading-none">R$ {fmt(kit.pricePerDay)}</p>
+                      <p className="text-stone-400 text-xs font-semibold uppercase tracking-wider mb-1">Valor por dose</p>
+                      <p className="text-stone-900 font-black text-2xl leading-none">R$ {fmt(kit.pricePerDay)}</p>
                     </div>
                     {kit.savingsPct && (
-                      <span className="text-green-400 bg-green-500/10 border border-green-500/20 text-xs font-bold px-2.5 py-1 rounded-full">
+                      <span className="text-rose-600 bg-rose-50 border border-rose-200 text-xs font-bold px-3 py-1.5 rounded-full">
                         -{kit.savingsPct}%
                       </span>
                     )}
                   </div>
 
-                  <div className="bg-black/30 rounded-xl px-4 py-3.5 border border-white/5">
+                  <div className="bg-stone-50 rounded-2xl px-5 py-4 border border-stone-100">
                     <div className="flex items-end justify-between">
                       <div>
                         {kit.originalPrice && (
-                          <p className="text-gray-700 text-xs line-through">R$ {fmt(kit.originalPrice)}</p>
+                          <p className="text-stone-400 text-xs line-through mb-1">R$ {fmt(kit.originalPrice)}</p>
                         )}
-                        <p className="text-gray-500 text-xs">Total do kit</p>
+                        <p className="text-stone-500 text-xs font-semibold">Total do kit</p>
                       </div>
-                      <p className="text-white font-black text-3xl leading-none">R$ {fmt(kit.price)}</p>
+                      <p className="text-stone-900 font-black text-3xl leading-none">R$ {fmt(kit.price)}</p>
                     </div>
                     {kit.savings && (
-                      <p className="text-green-400/80 text-xs mt-2 text-right">
+                      <p className="text-rose-600 text-xs mt-2 text-right font-medium">
                         Você economiza R$ {fmt(kit.savings)}
                       </p>
                     )}
@@ -190,13 +190,13 @@ export default function ProductsPage() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex flex-col gap-2 mt-auto">
-                  <a href={kit.payUrl} target="_blank" rel="noopener noreferrer" id={`btn-checkout-secaps-${kit.months}`}
-                    className="btn-primary text-black font-bold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2">
+                <div className="flex flex-col gap-3 mt-auto">
+                  <a href={kit.payUrl} target="_blank" rel="noopener noreferrer" id={`btn-checkout-velmo-${kit.months}`}
+                    className="bg-gradient-to-r from-stone-900 to-black text-[#F5E6D3] font-bold text-base py-4 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
                     Comprar agora
                   </a>
-                  <a href={makeWA(kit.name)} target="_blank" rel="noopener noreferrer" id={`btn-whatsapp-secaps-${kit.months}`}
-                    className="btn-whatsapp text-white font-semibold text-sm py-3 rounded-xl flex items-center justify-center gap-2">
+                  <a href={makeWA(kit.name)} target="_blank" rel="noopener noreferrer" id={`btn-whatsapp-velmo-${kit.months}`}
+                    className="btn-whatsapp text-white font-semibold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-sm">
                     <WaSvg />
                     Falar com Vendedor
                   </a>
@@ -207,77 +207,37 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      {/* COMPARISON TABLE */}
-      <div className="max-w-4xl mx-auto px-4 pb-10">
-        <div className="rounded-2xl overflow-hidden border border-white/7">
-          <div className="px-5 py-3.5 border-b border-white/5 bg-white/2">
-            <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest text-center">Comparativo dos kits</p>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-white/5">
-                  <th className="text-left px-5 py-3 text-gray-500 font-medium text-xs">Kit</th>
-                  <th className="text-right px-4 py-3 text-gray-500 font-medium text-xs">Total</th>
-                  <th className="text-right px-4 py-3 text-[#00ddb4] font-semibold text-xs">Por dose</th>
-                  <th className="text-right px-4 py-3 text-gray-500 font-medium text-xs hidden sm:table-cell">Doses</th>
-                  <th className="text-right px-5 py-3 text-green-400 font-medium text-xs">Economia</th>
-                </tr>
-              </thead>
-              <tbody>
-                {kits.map(k => (
-                  <tr key={k.id} className={`border-b border-white/4 last:border-0 ${k.highlight ? "bg-[#00ddb4]/4" : ""}`}>
-                    <td className="px-5 py-3.5 text-sm font-semibold text-white">
-                      {k.name}
-                      {k.highlight && (
-                        <span className="ml-2 text-[10px] bg-[#00ddb4] text-black px-1.5 py-0.5 rounded font-black uppercase tracking-wide">popular</span>
-                      )}
-                    </td>
-                    <td className="px-4 py-3.5 text-right text-sm text-white font-semibold">R$ {fmt(k.price)}</td>
-                    <td className="px-4 py-3.5 text-right text-base text-[#00ddb4] font-black">R$ {fmt(k.pricePerDay)}</td>
-                    <td className="px-4 py-3.5 text-right text-sm text-gray-500 hidden sm:table-cell">{k.doses}</td>
-                    <td className="px-5 py-3.5 text-right text-sm text-green-400 font-medium">
-                      {k.savings ? `R$ ${fmt(k.savings)}` : "—"}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
       {/* TRUST */}
-      <div className="max-w-4xl mx-auto px-4 pb-16">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="max-w-4xl mx-auto px-4 pb-20">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
-            { icon: "🏆", label: "Garantia de 90 dias" },
+            { icon: "🏆", label: "Garantia de 30 dias" },
             { icon: "🔒", label: "Pagamento seguro" },
-            { icon: "🚚", label: "Entrega em até 15 dias" },
-            { icon: "✅", label: "Produto original ANVISA" },
+            { icon: "🚚", label: "Entrega via Correios" },
+            { icon: "✅", label: "Produto original" },
           ].map(t => (
-            <div key={t.label} className="bg-white/2 border border-white/5 rounded-xl py-3 px-3 text-center">
-              <div className="text-xl mb-1">{t.icon}</div>
-              <p className="text-gray-400 text-xs">{t.label}</p>
+            <div key={t.label} className="bg-white border border-stone-100 rounded-2xl py-4 px-4 text-center shadow-sm">
+              <div className="text-2xl mb-2">{t.icon}</div>
+              <p className="text-stone-500 text-xs font-medium">{t.label}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/5 py-8 px-5 text-center">
-        <p className="text-[#00ddb4]/50 text-xs font-medium mb-2">@vivalevemulher.shop · Revendedora Autorizada</p>
-        <p className="text-gray-700 text-xs max-w-md mx-auto leading-relaxed">
+      <footer className="bg-stone-950 py-10 px-5 text-center">
+        <p className="text-stone-500 text-xs font-medium mb-3">@vivalevemulher.shop · Revendedora Autorizada</p>
+        <p className="text-stone-600 text-xs max-w-md mx-auto leading-relaxed">
           CNPJ 29.822.523/0002-86 · Suplemento alimentar conforme ANVISA RDC 240/2018<br />
           Indicado para maiores de 19 anos. Consulte um profissional de saúde antes do uso.
         </p>
       </footer>
 
       {/* FLOATING */}
-      <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-secaps-floating"
-        className="floating-btn btn-whatsapp text-white font-semibold px-4 py-3.5 rounded-full flex items-center gap-2 shadow-2xl text-sm">
+      <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-velmo-floating"
+        className="fixed bottom-6 right-6 btn-whatsapp text-white font-semibold px-4 py-3.5 rounded-full flex items-center gap-2 shadow-2xl text-sm z-50">
         <WaSvg />
-        <span>Falar com Vendedor</span>
+        <span className="hidden sm:inline">Falar com Vendedor</span>
       </a>
     </div>
   );
