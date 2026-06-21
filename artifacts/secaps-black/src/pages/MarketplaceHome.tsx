@@ -41,27 +41,27 @@ export default function MarketplaceHome() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            {/* Produto 1: Secaps Black */}
+            {/* Produto 1: Velmo Black */}
             <div className="group relative rounded-3xl bg-white border border-stone-200 overflow-hidden hover:border-[#B69145]/30 shadow-sm hover:shadow-xl transition-all duration-500">
               <div className="aspect-square bg-stone-50 p-6 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent z-0" />
                 <img 
-                  src="/banner.png" 
-                  alt="Secaps Black" 
-                  className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500 relative z-10 shadow-md"
+                  src="/images/velmo/mockup.png" 
+                  alt="Velmo Black" 
+                  className="w-full h-full object-contain rounded-2xl group-hover:scale-105 transition-transform duration-500 relative z-10 shadow-md"
                 />
               </div>
               <div className="p-8">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-stone-900">Secaps Black</h3>
+                  <h3 className="text-2xl font-bold text-stone-900">Velmo Black</h3>
                   <span className="px-3 py-1 bg-[#B69145]/10 text-[#B69145] text-[10px] uppercase tracking-wider font-bold rounded-full border border-[#B69145]/20">
                     MAIS VENDIDO
                   </span>
                 </div>
                 <p className="text-stone-500 mb-8 line-clamp-2 text-sm leading-relaxed">
-                  A fórmula termogênica mais potente do mercado para um emagrecimento rápido e definitivo.
+                  A fórmula mais avançada e premium do mercado para um emagrecimento rápido e definitivo focado no controle do apetite e vontade de doces.
                 </p>
-                <Link href="/secaps-black">
+                <Link href="/velmo-black">
                   <a className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-white shadow-lg shadow-[#B69145]/20 bg-gradient-to-r from-[#D4AF37] to-[#B69145] hover:opacity-90 hover:-translate-y-0.5 transition-all">
                     Conhecer Tratamento
                     <ArrowRight className="w-5 h-5" />
