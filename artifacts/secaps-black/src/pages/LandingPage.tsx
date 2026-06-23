@@ -54,6 +54,38 @@ function ViewerCount() {
   );
 }
 
+function FaqAccordion() {
+  const [open, setOpen] = useState<number | null>(null);
+  const faqs = [
+    { q: "Quem pode tomar o Velmo Black?", a: "Indicado para adultos a partir de 19 anos. Não recomendado para gestantes e lactantes salvo sob orientação médica." },
+    { q: "Tem efeitos colaterais?", a: "Geralmente bem tolerado. Em casos raros de sensibilidade à cafeína, pode ocorrer dor de cabeça leve ou insônia. Evite tomar à noite." },
+    { q: "Posso tomar com outros medicamentos?", a: "Pode ser utilizado, mas é importante consultar um médico antes se você tiver diabetes, hipertensão, ou uso contínuo de controlados." },
+    { q: "Em quanto tempo recebo o produto?", a: "A entrega é realizada pelos Correios e pode ocorrer em até 15 dias úteis após a postagem, dependendo da sua região." },
+    { q: "Como funciona a garantia de 30 dias?", a: "Se em até 30 dias você não ficar satisfeita, basta entrar em contato pelo WhatsApp que realizamos o reembolso integral. Sem burocracia." },
+    { q: "Qual a diferença entre os kits?", a: "O princípio ativo é o mesmo. A diferença está na quantidade e na economia: quanto mais potes, maior o desconto por unidade e mais tempo para ver resultados completos." },
+  ];
+  return (
+    <div className="space-y-3">
+      {faqs.map((faq, i) => (
+        <div key={i} className="border border-stone-200 rounded-xl overflow-hidden">
+          <button
+            onClick={() => setOpen(open === i ? null : i)}
+            className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-stone-50 transition-colors"
+          >
+            <span className="font-semibold text-stone-900 text-sm">{faq.q}</span>
+            <span className={`text-stone-400 text-lg flex-shrink-0 transition-transform duration-200 ${open === i ? 'rotate-45' : ''}`}>+</span>
+          </button>
+          {open === i && (
+            <div className="px-5 pb-5 text-stone-500 text-sm leading-relaxed border-t border-stone-100 pt-4">
+              {faq.a}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function LandingPage() {
   return (
     <div className="bg-[#FDFBF7] min-h-screen text-stone-800 font-sans selection:bg-rose-200">
@@ -265,36 +297,48 @@ export default function LandingPage() {
       </section>
 
       {/* GUARANTEE */}
-      <section className="py-20 px-5 bg-amber-50">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-black uppercase text-stone-900 mb-4">Garantia de 30 dias</h2>
-          <p className="text-stone-600 text-base leading-relaxed mb-8">
-            O Velmo Black possui garantia de 30 dias. Caso você não fique satisfeita com o produto, poderá solicitar o reembolso dentro desse período, oferecendo mais segurança na sua compra.
-          </p>
-          <Link href="/velmo-black/produtos" id="btn-cta-velmo-guarantee"
-            className="bg-gradient-to-r from-stone-900 to-black text-[#F5E6D3] font-bold text-sm px-8 py-4 rounded-full inline-flex items-center justify-center shadow-xl hover:scale-105 transition-transform">
-            Experimentar sem risco
-          </Link>
+      <section className="py-20 px-5 bg-gradient-to-b from-amber-50 to-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-white border border-amber-200 rounded-3xl p-8 md:p-12 shadow-lg text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(251,191,36,0.08)_0%,_transparent_70%)]"></div>
+            <div className="relative z-10">
+              <div className="w-20 h-20 bg-amber-50 border-4 border-amber-200 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+                <span className="text-4xl">🛡️</span>
+              </div>
+              <p className="text-amber-700 text-xs font-bold uppercase tracking-widest mb-2">Sua compra está protegida</p>
+              <h2 className="text-2xl sm:text-3xl font-black uppercase text-stone-900 mb-4">Garantia Incondicional<br/>de 30 Dias</h2>
+              <p className="text-stone-600 text-base leading-relaxed mb-8 max-w-xl mx-auto">
+                Se em até 30 dias você não ficar 100% satisfeita com o Velmo Black, devolvemos <strong>cada centavo</strong> do seu investimento. Sem perguntas, sem burocracia.
+              </p>
+              <div className="flex flex-wrap justify-center gap-6 mb-8">
+                {[
+                  { icon: "✅", label: "Reembolso total" },
+                  { icon: "⚡", label: "Processo rápido" },
+                  { icon: "💬", label: "Suporte pelo WhatsApp" },
+                ].map(item => (
+                  <div key={item.label} className="flex items-center gap-2 text-stone-700">
+                    <span className="text-lg">{item.icon}</span>
+                    <span className="text-sm font-semibold">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+              <Link href="/velmo-black/produtos" id="btn-cta-velmo-guarantee"
+                className="bg-gradient-to-r from-stone-900 to-black text-[#F5E6D3] font-bold text-sm px-10 py-4 rounded-full inline-flex items-center justify-center shadow-xl hover:scale-105 transition-transform">
+                Experimentar sem risco →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="py-20 px-5 bg-white border-t border-stone-100">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-black uppercase text-center text-stone-900 mb-10">Dúvidas Frequentes</h2>
-          <div className="space-y-4">
-            {[
-              { q: "Quem pode tomar o Velmo Black?", a: "Indicado para adultos a partir de 19 anos. Não recomendado para gestantes e lactantes salvo sob orientação médica." },
-              { q: "Tem efeitos colaterais?", a: "Geralmente bem tolerado. Em casos raros de sensibilidade à cafeína, pode ocorrer dor de cabeça leve ou insônia." },
-              { q: "Posso tomar com outros medicamentos?", a: "Pode ser utilizado, mas é importante consultar um médico antes se você tiver diabetes, hipertensão, ou uso contínuo de controlados." },
-              { q: "Em quanto tempo recebo o produto?", a: "A entrega é realizada pelos Correios e pode ocorrer em até 15 dias úteis após a postagem, dependendo da sua região." }
-            ].map((faq, i) => (
-              <div key={i} className="border border-stone-200 rounded-xl p-5">
-                <h4 className="font-bold text-stone-900 mb-2">{faq.q}</h4>
-                <p className="text-stone-500 text-sm leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-black uppercase text-stone-900 mb-3">Dúvidas Frequentes</h2>
+            <p className="text-stone-500 text-sm">Tudo que você precisa saber antes de começar sua transformação.</p>
           </div>
+          <FaqAccordion />
         </div>
       </section>
 

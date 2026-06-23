@@ -45,6 +45,7 @@ const kits = [
     payUrl: "https://pay.hest.com.br/54136eed-6288-4a4f-8e1b-43c2f76d1083",
     tagline: "Para sentir os primeiros resultados.",
     image: "/images/velmo/potes-1.png",
+    stock: 23,
   },
   {
     id: 3, name: "Kit 3 Meses", months: 3, bottles: 3, doses: 90,
@@ -55,6 +56,7 @@ const kits = [
     payUrl: "https://pay.hest.com.br/9daf0dbb-c2c1-49d4-ad74-d217f970b703",
     tagline: "Resultados sólidos e duradouros.",
     image: "/images/velmo/potes-3.png",
+    stock: 11,
   },
   {
     id: 5, name: "Kit 5 Meses", months: 5, bottles: 5, doses: 150,
@@ -65,6 +67,7 @@ const kits = [
     payUrl: "https://pay.hest.com.br/b305215e-44bf-4263-aa90-670a0d53e78d",
     tagline: "Transformação completa, máxima economia.",
     image: "/images/velmo/potes-5.png",
+    stock: 7,
   },
   {
     id: 12, name: "Kit 12 Meses", months: 12, bottles: 12, doses: 360,
@@ -74,7 +77,8 @@ const kits = [
     label: "Maior desconto", highlight: false,
     payUrl: "https://pay.hest.com.br/c5efdd0a-789f-48d3-b377-2f52600e86f4",
     tagline: "Estoque garantido por um ano inteiro.",
-    image: "/images/velmo/potes-5.png", // Reusing potes-5 for visual, if 12 doesn't exist
+    image: "/images/velmo/potes-5.png",
+    stock: 4,
   },
 ];
 
@@ -114,6 +118,31 @@ export default function ProductsPage() {
         </p>
       </div>
 
+      {/* PAYMENT TRUST STRIP */}
+      <div className="max-w-5xl mx-auto px-4 mb-10">
+        <div className="bg-white border border-stone-100 rounded-2xl px-6 py-4 shadow-sm flex flex-wrap items-center justify-center gap-4 text-stone-500 text-xs font-semibold">
+          <div className="flex items-center gap-1.5">
+            <span className="text-green-500 text-base">💳</span>
+            Cartão de crédito
+          </div>
+          <div className="w-px h-4 bg-stone-200 hidden sm:block"></div>
+          <div className="flex items-center gap-1.5">
+            <span className="text-blue-500 text-base">📱</span>
+            Pix (desconto imediato)
+          </div>
+          <div className="w-px h-4 bg-stone-200 hidden sm:block"></div>
+          <div className="flex items-center gap-1.5">
+            <span className="text-stone-500 text-base">📎</span>
+            Boleto bancário
+          </div>
+          <div className="w-px h-4 bg-stone-200 hidden sm:block"></div>
+          <div className="flex items-center gap-1.5">
+            <span className="text-amber-500 text-base">🔒</span>
+            Ambiente 100% seguro
+          </div>
+        </div>
+      </div>
+
       {/* KIT CARDS */}
       <div className="max-w-5xl mx-auto px-4 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -137,10 +166,18 @@ export default function ProductsPage() {
 
               <div className="p-6 sm:p-8 flex flex-col flex-1">
                 {/* Kit image */}
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-4 relative">
                   <img src={kit.image} alt={kit.name}
                     className="h-40 object-contain drop-shadow-xl" />
                 </div>
+
+                {/* Stock warning */}
+                {kit.stock <= 15 && (
+                  <div className="flex items-center justify-center gap-1.5 text-[11px] font-bold text-orange-700 bg-orange-50 border border-orange-200 rounded-full px-3 py-1 mb-4 w-fit mx-auto">
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>
+                    Restam apenas {kit.stock} unidades
+                  </div>
+                )}
 
                 {/* Kit title */}
                 <div className="text-center mb-6">
