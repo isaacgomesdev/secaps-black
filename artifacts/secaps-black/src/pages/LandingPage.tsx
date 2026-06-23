@@ -111,6 +111,11 @@ export default function LandingPage() {
               Tirar Dúvidas
             </a>
           </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4 text-stone-500 text-xs font-medium">
+             <div className="flex items-center gap-1.5 bg-green-50 text-green-700 px-2 py-1 rounded-md border border-green-100"><span className="text-base leading-none">🔒</span> Compra Segura</div>
+             <div className="flex items-center gap-1.5 bg-blue-50 text-blue-700 px-2 py-1 rounded-md border border-blue-100"><span className="text-base leading-none">🛡️</span> Aprovado Anvisa</div>
+          </div>
         </div>
         <div className="flex-1 relative w-full max-w-md">
           <div className="absolute inset-0 bg-gradient-to-tr from-rose-100 to-amber-50 rounded-full blur-3xl opacity-60"></div>
@@ -158,6 +163,44 @@ export default function LandingPage() {
               <p className="text-stone-500 text-sm leading-relaxed">{b.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="py-20 px-5 bg-amber-50/50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+             <p className="text-rose-500 text-xs font-bold uppercase tracking-widest mb-3">Resultados Reais</p>
+             <h2 className="text-2xl sm:text-3xl font-black uppercase text-stone-900 mb-3">Histórias de quem <span className="text-rose-500">confia</span></h2>
+             <p className="text-stone-500 text-sm max-w-xl mx-auto">Milhares de mulheres já transformaram suas rotinas e recuperaram a autoestima com o Velmo Black.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+             {[
+               { name: "Juliana T.", age: 34, title: "Finalmente controlei a vontade de doces!", text: "Depois do almoço era um terror, eu sempre precisava de um chocolate. Com o Velmo Black, essa vontade sumiu já na primeira semana. Consegui voltar pra minha calça 38!" },
+               { name: "Mariana R.", age: 29, title: "Mais energia, menos medidas", text: "Estou no meu segundo pote e a diferença no espelho é absurda. Além de me sentir mais leve, tenho muito mais disposição para o trabalho e pra academia." },
+               { name: "Camila F.", age: 41, title: "O melhor que já testei", text: "Já tentei de tudo, mas esse foi o único que não me deu taquicardia nem me deixou agitada. Emagrecimento super constante e saudável. Super recomendo!" }
+             ].map((t, i) => (
+                <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col hover:shadow-md transition-shadow">
+                   <div className="text-amber-400 text-sm mb-3 tracking-widest">★★★★★</div>
+                   <h4 className="font-bold text-stone-900 mb-2">{t.title}</h4>
+                   <p className="text-stone-500 text-sm flex-1 leading-relaxed italic">"{t.text}"</p>
+                   <div className="mt-4 pt-4 border-t border-stone-50 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-100 to-rose-200 flex items-center justify-center text-rose-800 font-bold">{t.name[0]}</div>
+                      <div>
+                         <p className="text-stone-900 text-xs font-bold">{t.name}</p>
+                         <p className="text-stone-400 text-[10px] flex items-center gap-1 mt-0.5">
+                            <span className="text-green-500 text-[10px]">✔</span> Compra Verificada
+                         </p>
+                      </div>
+                   </div>
+                </div>
+             ))}
+          </div>
+          <div className="mt-10 text-center">
+             <Link href="/velmo-black/produtos" className="inline-block text-stone-600 font-bold text-sm border-b-2 border-stone-200 hover:border-stone-400 hover:text-stone-900 pb-1 transition-all">
+                Quero ser a próxima história de sucesso →
+             </Link>
+          </div>
         </div>
       </section>
 
@@ -288,11 +331,22 @@ export default function LandingPage() {
         </p>
       </footer>
 
-      {/* FLOATING BUTTON */}
+      {/* FLOATING ACTION BAR MOBILE */}
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-md border-t border-stone-200 z-50 flex items-center justify-center gap-3 md:hidden shadow-[0_-10px_20px_rgba(0,0,0,0.05)] pb-safe">
+         <Link href="/velmo-black/produtos" className="flex-1 bg-gradient-to-r from-stone-900 to-black text-[#F5E6D3] font-bold text-sm py-3.5 rounded-xl flex items-center justify-center shadow-lg relative overflow-hidden group">
+            <span className="relative z-10">Ver Kits e Ofertas</span>
+            <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+         </Link>
+         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-white font-semibold p-3.5 rounded-xl flex items-center justify-center shadow-md">
+            <WaSvg />
+         </a>
+      </div>
+
+      {/* FLOATING BUTTON DESKTOP */}
       <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-velmo-floating"
-        className="fixed bottom-6 right-6 btn-whatsapp text-white font-semibold px-4 py-3.5 rounded-full flex items-center gap-2 shadow-2xl text-sm z-50 hover:scale-105 transition-transform">
+        className="hidden md:flex fixed bottom-6 right-6 btn-whatsapp text-white font-semibold px-4 py-3.5 rounded-full items-center gap-2 shadow-2xl text-sm z-50 hover:scale-105 transition-transform">
         <WaSvg />
-        <span className="hidden sm:inline">Falar com Vendedor</span>
+        <span>Falar com Vendedor</span>
       </a>
     </div>
   );

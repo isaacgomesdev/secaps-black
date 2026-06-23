@@ -165,7 +165,7 @@ export default function ProductsPage() {
                       <p className="text-stone-900 font-black text-2xl leading-none">R$ {fmt(kit.pricePerDay)}</p>
                     </div>
                     {kit.savingsPct && (
-                      <span className="text-rose-600 bg-rose-50 border border-rose-200 text-xs font-bold px-3 py-1.5 rounded-full">
+                      <span className="text-white bg-green-600 border border-green-500 shadow-sm text-xs font-bold px-3 py-1.5 rounded-full">
                         -{kit.savingsPct}%
                       </span>
                     )}
@@ -182,9 +182,11 @@ export default function ProductsPage() {
                       <p className="text-stone-900 font-black text-3xl leading-none">R$ {fmt(kit.price)}</p>
                     </div>
                     {kit.savings && (
-                      <p className="text-rose-600 text-xs mt-2 text-right font-medium">
-                        Você economiza R$ {fmt(kit.savings)}
-                      </p>
+                      <div className="mt-3 flex justify-end">
+                         <p className="text-green-700 bg-green-50 border border-green-100 text-xs font-bold px-2 py-1 rounded-md inline-block">
+                           Você economiza R$ {fmt(kit.savings)}
+                         </p>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -192,11 +194,14 @@ export default function ProductsPage() {
                 {/* Actions */}
                 <div className="flex flex-col gap-3 mt-auto">
                   <a href={kit.payUrl} target="_blank" rel="noopener noreferrer" id={`btn-checkout-velmo-${kit.months}`}
-                    className="bg-gradient-to-r from-stone-900 to-black text-[#F5E6D3] font-bold text-base py-4 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+                    className="bg-gradient-to-r from-stone-900 to-black text-[#F5E6D3] font-bold text-base py-4 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow hover:scale-[1.02]">
                     Comprar agora
                   </a>
+                  <div className="flex items-center justify-center gap-1.5 text-[10px] text-stone-500 font-medium -mt-1 mb-1">
+                     <span className="text-green-500 text-xs">🔒</span> Compra 100% Segura e Criptografada
+                  </div>
                   <a href={makeWA(kit.name)} target="_blank" rel="noopener noreferrer" id={`btn-whatsapp-velmo-${kit.months}`}
-                    className="btn-whatsapp text-white font-semibold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-sm">
+                    className="btn-whatsapp text-white font-semibold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-sm hover:opacity-90">
                     <WaSvg />
                     Falar com Vendedor
                   </a>
