@@ -136,25 +136,22 @@ export default function LandingPage() {
       </nav>
 
       {/* HERO */}
-      <section className="px-5 pt-14 pb-20 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <section className="px-5 pt-8 pb-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
         <div className="flex-1 text-left">
-          <div className="inline-flex items-center gap-2 bg-rose-50 border border-rose-200 text-rose-600 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">
+          <div className="inline-flex items-center gap-2 bg-rose-50 border border-rose-200 text-rose-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
             Para mulheres que querem emagrecer de verdade
           </div>
-          <h1 className="text-[clamp(2.2rem,5.5vw,3.8rem)] font-black uppercase leading-[1.05] mb-5 tracking-tight text-stone-900">
+          <h1 className="text-[clamp(1.9rem,4.5vw,3.2rem)] font-black uppercase leading-[1.05] mb-3 tracking-tight text-stone-900">
             Controle a fome,<br />
             reduza os doces<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-amber-500">e emagreça com saúde.</span>
           </h1>
-          <p className="text-stone-600 text-base sm:text-lg max-w-md mb-4 leading-relaxed">
-            O <strong className="text-stone-800">Velmo Black</strong> é o suplemento que atua diretamente nas <strong>três causas</strong> que impedem o emagrecimento feminino: <em>fome excessiva, compulsão por doces e metabolismo lento.</em>
-          </p>
-          <p className="text-stone-500 text-sm max-w-sm mb-7 leading-relaxed">
-            2 cápsulas por dia. Sem dieta radical. Sem cortar tudo.
+          <p className="text-stone-600 text-sm sm:text-base max-w-md mb-4 leading-relaxed">
+            O <strong className="text-stone-800">Velmo Black</strong> atua nas <strong>três causas</strong> do emagrecimento feminino: <em>fome excessiva, compulsão por doces e metabolismo lento.</em> 2 cápsulas por dia, sem dieta radical.
           </p>
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mb-8">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mb-5">
             <div className="flex items-center gap-1">
               <span className="text-amber-400 text-sm">★★★★★</span>
               <span className="text-stone-500 text-xs font-medium ml-1">4.8 · +2.300 avaliações</span>
@@ -163,25 +160,25 @@ export default function LandingPage() {
             <ViewerCount />
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 max-w-sm sm:max-w-none mb-8">
+          <div className="flex flex-col sm:flex-row gap-2.5 max-w-sm sm:max-w-none mb-5">
             <Link href="/velmo-black/produtos" id="btn-cta-velmo-hero"
-              className="bg-gradient-to-r from-stone-900 to-black text-[#F5E6D3] font-bold text-sm px-8 py-4 rounded-full flex items-center justify-center gap-2 shadow-xl hover:scale-105 transition-transform">
+              className="bg-gradient-to-r from-stone-900 to-black text-[#F5E6D3] font-bold text-sm px-7 py-3.5 rounded-full flex items-center justify-center gap-2 shadow-xl hover:scale-105 transition-transform">
               🔥 Ver kits com desconto
             </Link>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" id="btn-whatsapp-velmo-hero"
-              className="bg-white border border-stone-200 text-stone-700 font-bold text-sm px-8 py-4 rounded-full flex items-center justify-center gap-2 shadow-sm hover:bg-stone-50 transition-colors">
+              className="bg-white border border-stone-200 text-stone-700 font-bold text-sm px-7 py-3.5 rounded-full flex items-center justify-center gap-2 shadow-sm hover:bg-stone-50 transition-colors">
               <WaSvg />
               Tirar Dúvidas
             </a>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 text-xs font-medium">
-            <div className="flex items-center gap-1.5 bg-green-50 text-green-700 px-2.5 py-1 rounded-lg border border-green-200">🔒 Compra 100% Segura</div>
-            <div className="flex items-center gap-1.5 bg-blue-50 text-blue-700 px-2.5 py-1 rounded-lg border border-blue-200">🛡️ Notificado ANVISA</div>
-            <div className="flex items-center gap-1.5 bg-amber-50 text-amber-700 px-2.5 py-1 rounded-lg border border-amber-200">↩️ Garantia 30 dias</div>
+          <div className="flex flex-wrap items-center gap-2 text-xs font-medium">
+            <div className="flex items-center gap-1 bg-green-50 text-green-700 px-2 py-0.5 rounded-md border border-green-200">🔒 Compra Segura</div>
+            <div className="flex items-center gap-1 bg-blue-50 text-blue-700 px-2 py-0.5 rounded-md border border-blue-200">🛡️ ANVISA</div>
+            <div className="flex items-center gap-1 bg-amber-50 text-amber-700 px-2 py-0.5 rounded-md border border-amber-200">↩️ Garantia 30 dias</div>
           </div>
         </div>
-        <div className="flex-1 relative w-full max-w-md">
+        <div className="flex-1 relative w-full max-w-sm">
           <div className="absolute inset-0 bg-gradient-to-tr from-rose-200 to-amber-100 rounded-full blur-3xl opacity-50" />
           <img src="/images/velmo/mockup.png" alt="Potes Velmo Black" className="relative z-10 w-full drop-shadow-2xl hover:scale-105 transition-transform duration-700" />
         </div>
